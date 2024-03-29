@@ -160,6 +160,14 @@ in
       default = [ "nix" ];
     };
 
+    runnerGroup = lib.mkOption {
+      type = lib.types.nullOr lib.types.str;
+      description = lib.mdDoc ''
+        Name of the runner group to add this runner to (defaults to the default runner group).
+      '';
+      default = null;
+    };
+
     nodeRuntimes = lib.mkOption {
       type =
         with lib.types;
@@ -187,6 +195,7 @@ in
           tokenFile = cfg.tokenFile;
           githubApp = cfg.githubApp;
           ephemeral = cfg.ephemeral;
+          runnerGroup = cfg.runnerGroup;
           nodeRuntimes = cfg.nodeRuntimes;
           serviceOverrides =
             {
