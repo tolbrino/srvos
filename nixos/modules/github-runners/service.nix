@@ -149,7 +149,7 @@ in
             }
             clean_state() {
               find "$STATE_DIRECTORY/" -mindepth 1 -delete
-              copy_tokens 
+              copy_tokens
             }
             unregister_previous_runner
             clean_state
